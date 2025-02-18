@@ -1,11 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Set the launch date (30 days from now)
-  const launchDate = new Date();
-  launchDate.setDate(launchDate.getDate() + 40);
+  // Set the fixed target date (e.g., December 31, 2023, at 00:00:00)
+  const launchDate = new Date('2025-03-31T00:00:00Z');
 
   // Update countdown
   function updateCountdown() {
-    const currentDate = new Date();
+    const currentDate = new Date(); // Uses device's system time
     const difference = launchDate - currentDate;
 
     const days = Math.floor(difference / (1000 * 60 * 60 * 24));
@@ -22,5 +21,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // Update countdown every second
   setInterval(updateCountdown, 1000);
   updateCountdown(); // Initial call
-
 });
